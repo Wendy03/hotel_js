@@ -1,9 +1,7 @@
-const url =
-  "https://challenge.thef2e.com/api/thef2e2019/stage6/rooms";
-  
-axios.defaults.headers[
-	"Authorization"
-] = `Bearer Hv7Aq1ueVlP0sYZmnBRfk1nlB3b4oAANj6b5P5QNu7BiP6u0UDlohleze749`;
+const token = "Hv7Aq1ueVlP0sYZmnBRfk1nlB3b4oAANj6b5P5QNu7BiP6u0UDlohleze749";
+const url = "https://challenge.thef2e.com/api/thef2e2019/stage6/rooms";
+
+axios.defaults.headers["Authorization"] = `Bearer ${token}`;
 
 const cardList = document.querySelector(".cardList");
 let data = [];
@@ -32,24 +30,13 @@ function render() {
 						  </div>
             </div>
             <div class="card-footer">
-              <a href="room.html?id=${room.id}" class="detail btn btn-outline-primary btn-block" data-id="${room.id}">
+              <a href="room.html?id=${room.id}" class="detail btn btn-outline-primary btn-block">
               詳細資料
               </a>
             </div>
 					</div>
 				</div>
-
 			`;
 	});
 	cardList.innerHTML = str;
 }
-
-// function detailBtn(e){
-//   if(e.target.classList.contains("detail")){
-//     console.log(e.target.dataset.id)
-//     const id = e.target.dataset.id
-//     window.location = `room.html?id=${id}`
-//   }
-// }
-
-// cardList.addEventListener('click', detailBtn)

@@ -1,11 +1,8 @@
-const id = location.search.split("=")[1]
-console.log(id)
-const url =
-  `https://challenge.thef2e.com/api/thef2e2019/stage6/room/${id}`;
-  
-axios.defaults.headers[
-	"Authorization"
-] = `Bearer Hv7Aq1ueVlP0sYZmnBRfk1nlB3b4oAANj6b5P5QNu7BiP6u0UDlohleze749`;
+const token = "Hv7Aq1ueVlP0sYZmnBRfk1nlB3b4oAANj6b5P5QNu7BiP6u0UDlohleze749";
+const id = location.search.split("=")[1];
+const url = `https://challenge.thef2e.com/api/thef2e2019/stage6/room/${id}`;
+
+axios.defaults.headers["Authorization"] = `Bearer ${token}`;
 
 const imgCarousel = document.querySelector(".carousel-inner");
 const roomInfo = document.querySelector(".roomInfo");
@@ -61,76 +58,76 @@ function infoCard() {
 function amenitiesCard() {
 	amenitiesInfo.innerHTML = `
     <div class="col-lg-4 ${
-					!roomData.amenities["Wi-Fi"] ? "text-muted" : "text-success"
+					!roomData.amenities["Wi-Fi"] ? "text-opacity" : ""
 				}">
     	<i class="fas fa-wifi"></i>
     	<span class="pl-2">Wi-Fi</span>
     </div>
 		<div class="col-lg-4 ${
-			!roomData.amenities["Air-Conditioner"] ? "text-muted" : "text-success"
+			!roomData.amenities["Air-Conditioner"] ? "text-opacity" : ""
 		}">
     	<i class="fas fa-wind"></i>
     	<span class="pl-2">空調</span>
-    </div>
+		</div>
 		<div class="col-lg-4 ${
-			!roomData.amenities["Breakfast"] ? "text-muted" : "text-success"
+			!roomData.amenities["Television"] ? "text-opacity" : ""
+		}">
+			<i class="fas fa-tv"></i>
+			<span class="pl-2">含電視</span>
+		</div>
+		<div class="col-lg-4 ${
+			!roomData.amenities["Refrigerator"] ? "text-opacity" : ""
+		}">
+			<i class="fas fa-ice-cream"></i>
+			<span class="pl-2">含冰箱</span>
+		</div>
+		<div class="col-lg-4 ${
+			!roomData.amenities["Sofa"] ? "text-opacity" : ""
+		}">
+			<i class="fas fa-couch"></i>
+			<span class="pl-2">含沙發</span>
+		</div>
+		<div class="col-lg-4 ${
+			!roomData.amenities["Mini-Bar"] ? "text-opacity" : ""
+		}">
+			<i class="fas fa-glass-cheers"></i>
+			<span class="pl-2">Mini Bar</span>
+		</div>
+		<div class="col-lg-4 ${
+			!roomData.amenities["Breakfast"] ? "text-opacity" : ""
 		}">
     	<i class="fas fa-utensils"></i>
    		 <span class="pl-2">含早餐</span>
-    </div>
+		</div>
+		<div class="col-lg-4 ${
+			!roomData.amenities["Great-View"] ? "text-opacity" : ""
+		}">
+			<i class="fas fa-mountain"></i>
+			<span class="pl-2">漂亮視野</span>
+		</div>
+		<div class="col-lg-4 ${
+			!roomData.amenities["Room-Service"] ? "text-opacity" : ""
+		}">
+			<i class="fas fa-concierge-bell"></i>
+			<span class="pl-2">客房服務</span>
+		</div>
     <div class="col-lg-4 ${
-					!roomData.amenities["Child-Friendly"] ? "text-muted" : "text-success"
+					!roomData.amenities["Child-Friendly"] ? "text-opacity" : ""
 				}">
     	<i class="fas fa-baby"></i>
     	<span class="pl-2">小孩友善</span>
     </div>
     <div class="col-lg-4 ${
-      !roomData.amenities["Pet-Friendly"] ? "text-muted" : "text-success"
-    }">
+					!roomData.amenities["Pet-Friendly"] ? "text-opacity" : ""
+				}">
       <i class="fas fa-paw"></i>
       <span class="pl-2">寵物友善</span>
-    </div>
-    <div class="col-lg-4 ${
-					!roomData.amenities["Great-View"] ? "text-muted" : "text-success"
-				}">
-    	<i class="fas fa-mountain"></i>
-    	<span class="pl-2">漂亮視野</span>
-    </div>
-    <div class="col-lg-4 ${
-					!roomData.amenities["Mini-Bar"] ? "text-muted" : "text-success"
-				}">
-    	<i class="fas fa-glass-cheers"></i>
-    	<span class="pl-2">Mini Bar</span>
-    </div>
-    <div class="col-lg-4 ${
-					!roomData.amenities["Refrigerator"] ? "text-muted" : "text-success"
-				}">
-    	<i class="fas fa-ice-cream"></i>
-    	<span class="pl-2">含冰箱</span>
-    </div>
-    <div class="col-lg-4 ${
-					!roomData.amenities["Room-Service"] ? "text-muted" : "text-success"
-				}">
-    	<i class="fas fa-concierge-bell"></i>
-    	<span class="pl-2">客房服務</span>
-    </div>
-    <div class="col-lg-4 ${
-					!roomData.amenities["Smoke-Free"] ? "text-muted" : "text-success"
-				}">
-      <i class="fas fa-smoking"></i>
-    	<span class="pl-2">煙友友善</span>
-    </div>
-    <div class="col-lg-4 ${
-					!roomData.amenities["Sofa"] ? "text-muted" : "text-success"
-				}">
-    	<i class="fas fa-couch"></i>
-    	<span class="pl-2">含沙發</span>
-    </div>
-    <div class="col-lg-4 ${
-					!roomData.amenities["Television"] ? "text-muted" : "text-success"
-				}">
-    	<i class="fas fa-tv"></i>
-    	<span class="pl-2">含電視</span>
-    </div>
+		</div>
+		<div class="col-lg-4 ${
+			!roomData.amenities["Smoke-Free"] ? "text-opacity" : ""
+		}">
+			<i class="fas fa-smoking-ban"></i>
+			<span class="pl-2">禁止吸菸</span>
+		</div>
 	`;
 }
